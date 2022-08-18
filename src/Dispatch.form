@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Dispatch">
+  <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="48" y="54" width="967" height="1057"/>
+    </constraints>
+    <properties>
+      <background color="-16775144"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="94766" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16775144"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <hspacer id="98af6">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <grid id="172d6" binding="PanelPatrouille" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="55b5c" class="javax.swing.JLabel" binding="LAgent">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Comic Sans MS" size="18"/>
+                  <text value="Agent en patrouille"/>
+                </properties>
+              </component>
+              <hspacer id="b3287">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="ebd" class="javax.swing.JLabel" binding="LSecteur">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Comic Sans MS" size="18"/>
+                  <text value="Secteur"/>
+                </properties>
+              </component>
+              <component id="8552d" class="javax.swing.JList" binding="listSecteur">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="Blaine County"/>
+                    <item value="Foxtrot"/>
+                    <item value="Oscar"/>
+                    <item value="Tango"/>
+                  </model>
+                  <toolTipText value=""/>
+                </properties>
+              </component>
+              <component id="9fbeb" class="javax.swing.JButton" binding="OKButton" default-binding="true">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="OK"/>
+                </properties>
+              </component>
+              <component id="36b96" class="javax.swing.JList" binding="listAgentSelct">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+            </children>
+          </grid>
+          <component id="c2b5d" class="javax.swing.JButton" binding="retour">
+            <constraints>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Retour"/>
+            </properties>
+          </component>
+          <component id="aa144" class="javax.swing.JLabel" binding="Lpatrouille">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="18"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="99b68" class="javax.swing.JButton" binding="btnEntrer">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Entrer"/>
+            </properties>
+          </component>
+          <component id="46df7" class="javax.swing.JLabel" binding="nomSp">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <foreground color="-1181441"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <grid id="2e538" binding="panelRapport" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="5e51c" class="javax.swing.JLabel" binding="hDispatch">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Heure rapport"/>
+                </properties>
+              </component>
+              <hspacer id="61b36">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="38eb3" class="javax.swing.JTextField" binding="heureDisp">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="f46b3" class="javax.swing.JLabel" binding="Lrapport">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Rapport :"/>
+                </properties>
+              </component>
+              <component id="d3768" class="javax.swing.JTextField" binding="rapport">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="74b09" class="javax.swing.JList" binding="listSp">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="107fb" class="javax.swing.JButton" binding="entrerRapport">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Entrer"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="5723f" class="javax.swing.JButton" binding="buttonCancel">
+            <constraints>
+              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Cancel"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="e3588" binding="panelDebut" layout-manager="GridLayoutManager" row-count="10" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16775144"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="1ef1a" class="javax.swing.JLabel" binding="Titre">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <font name="Comic Sans MS" size="28" style="1"/>
+              <foreground color="-2502597"/>
+              <text value="Dispatch LSSD"/>
+            </properties>
+          </component>
+          <component id="f4958" class="javax.swing.JTextField" binding="central">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="f1bea" class="javax.swing.JLabel" binding="PersoCentral">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="18"/>
+              <foreground color="-3090481"/>
+              <text value="Personne qui fais la central"/>
+            </properties>
+          </component>
+          <component id="64732" class="javax.swing.JLabel" binding="DebDisp">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="18"/>
+              <foreground color="-3090481"/>
+              <text value="Début Dispatch"/>
+            </properties>
+          </component>
+          <component id="85d37" class="javax.swing.JTextField" binding="DebuDisp">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="d6bba" class="javax.swing.JLabel" binding="Lerreur">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Comic Sans MS" size="18"/>
+              <foreground color="-4517120"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <grid id="32d4e" binding="PajoutPat" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16775144"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="e0de0" class="javax.swing.JLabel" binding="LPatrouille">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-7564135"/>
+                  <font name="Comic Sans MS" size="18"/>
+                  <foreground color="-1"/>
+                  <text value="Patrouille"/>
+                </properties>
+              </component>
+              <component id="9ee03" class="javax.swing.JButton" binding="plusPatrouille">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-7168877"/>
+                  <font name="Arial Black" size="26"/>
+                  <text value="+"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="1e985" binding="Peffeectif" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-16775144"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="20565" class="javax.swing.JLabel" binding="LEffectif">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <font name="Comic Sans MS" size="18"/>
+                  <foreground color="-3090481"/>
+                  <text value="Effectif présent"/>
+                </properties>
+              </component>
+              <component id="8e28f" class="javax.swing.JList" binding="list1" default-binding="true">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="100" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <model/>
+                </properties>
+              </component>
+              <component id="5d010" class="javax.swing.JButton" binding="selectBtn">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Selectionner"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
