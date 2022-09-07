@@ -12,11 +12,24 @@ public class Menu extends JDialog {
     private JButton entrerBtn;
     private JPanel Ppdw;
     private JLabel mauvais;
+    private JButton casierBtn;
+    private JPanel panelBtn;
+    private JPanel panelEntier;
+    private JButton button1;
+    private JLabel photo;
+    private JLabel photo1;
+    private JLabel photo2;
     private int nb = 1;
+
+    int p = 0;
     public Menu() {
         setContentPane(contentPane);
         setModal(true);
         Ppdw.setVisible(false);
+        panelBtn.setVisible(true);
+        photo.setVisible(false);
+        photo1.setVisible(false);
+        photo2.setVisible(false);
 
         LHG.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -24,6 +37,28 @@ public class Menu extends JDialog {
                     nb = 2;
             }
         });
+        button1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (p == 3){
+                    photo2.setVisible(false);
+                    p = 0;
+                }else {
+                    p = p+1;
+                }
+
+                if(p == 1) {
+                    photo.setVisible(true);
+                } else if (p == 2) {
+                    photo.setVisible(false);
+                    photo1.setVisible(true);
+                }
+                else if (p == 3) {
+                    photo1.setVisible(false);
+                    photo2.setVisible(true);
+                }
+            }
+        });
+
         entrerBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOk();
@@ -39,6 +74,16 @@ public class Menu extends JDialog {
 
         });
 
+        casierBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Casier cs = new Casier();
+                    onCancel();
+                    cs.pack();
+                    cs.setSize(1500,1000);
+                    cs.setVisible(true);
+            }
+
+        });
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
@@ -81,7 +126,7 @@ public class Menu extends JDialog {
             if( pass.equals(bonMdp)){
                 onCancel();
                 dialog.pack();
-                dialog.setSize(700,700);
+                dialog.setSize(1500,1000);
                 dialog.setVisible(true);
             }
             else {
@@ -95,7 +140,7 @@ public class Menu extends JDialog {
             if( pass.equals(bonMdp)){
                 onCancel();
                 dialog.pack();
-                dialog.setSize(600,600);
+                dialog.setSize(1500,1000);
                 dialog.setVisible(true);
             }
             else {

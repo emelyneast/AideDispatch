@@ -4,6 +4,7 @@ import java.util.List;
 public class Agent {
     String nomAgent;
     String grade ;
+
     List<Agent> agents = new ArrayList<>();
 
 
@@ -62,6 +63,11 @@ public class Agent {
        agents.add(new Agent("Steve Wade", tabGrade()[8]));
        agents.add(new Agent("Ayden Lopez", tabGrade()[9]));
 
+    }
+
+    public String[] listeVeh(){
+        String veh[] = {"granger serigraphier 2021","granger","SUV","Buffalo","crowwn Voctoria"};
+        return veh;
     }
 
     public static void main(String[] args) {

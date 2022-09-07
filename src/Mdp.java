@@ -1,6 +1,6 @@
 public class Mdp {
     String mdpLSSD = "2";
-    String mdpHautGrade = "1";
+    String mdpHautGrade = "HGlssd2022";
 
     public String getMdpLSSD() {
         return mdpLSSD;

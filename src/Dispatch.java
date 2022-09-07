@@ -1,11 +1,7 @@
 import javax.swing.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.*;
-import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 public class Dispatch extends JDialog {
@@ -35,7 +31,6 @@ public class Dispatch extends JDialog {
     private JPanel panelDebut;
     private JPanel panelRapport;
     private JLabel hDispatch;
-    private JTextField heureDisp;
     private JLabel Lrapport;
     private JTextField rapport;
     private JList listSp;
@@ -45,8 +40,12 @@ public class Dispatch extends JDialog {
     private JPanel PajoutPat;
     private JList listAgentSelct;
     private JPanel Peffeectif;
+    private JLabel Lveh;
+    private JList listVeh;
+    private JTextField HeureRap;
     int nbSP=0;
     DefaultListModel listSP = new DefaultListModel<>();
+    DefaultListModel listSPEntiere = new DefaultListModel<>();
     Agent ag = new Agent("","");
     public Dispatch() {
         setContentPane(contentPane);
@@ -55,6 +54,7 @@ public class Dispatch extends JDialog {
         panelRapport.setVisible(false);
         PajoutPat.setVisible(false);
         listAgent();
+
 
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -66,6 +66,7 @@ public class Dispatch extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 nbSP = nbSP +1;
                 PanelPatrouille.setVisible(true);
+                listvehAgent();
             }
         });
 
@@ -75,16 +76,25 @@ public class Dispatch extends JDialog {
             }
         });
 
+
+
         selectBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                PajoutPat.setVisible(true);
+
                 List<String> indices = list1.getSelectedValuesList();
                 DefaultListModel lAgentSelect = new DefaultListModel<>();
                 for (String i: indices ) {
                     lAgentSelect.addElement(i);
                 }
                 listAgentSelct.setModel(lAgentSelect);
-                Peffeectif.setVisible(false);
+                if (listAgentSelct.getModel().getSize()!=0) {
+                    Lerreur.setText("");
+                    PajoutPat.setVisible(true);
+                    Peffeectif.setVisible(false);
+                }
+                else{
+                    Lerreur.setText("pas d'agent selectionner");
+                }
 
             }
         });
@@ -93,30 +103,39 @@ public class Dispatch extends JDialog {
             public void actionPerformed(ActionEvent e) {
 
                 if (syntax() == true) {
+                    listSPEntiere = (listSP);
+                    System.out.println(listSPEntiere);
                     panelRapport.setVisible(true);
                     panelDebut.setVisible(false);
                     PanelPatrouille.setVisible(false);
                     btnEntrer.setVisible(false);
                 }
                 else{
-                    Lerreur.setText("erreur syntaxe");
+                    Lerreur.setText("erreur syntaxe ou reste des agents a sélectionner");
                 }
             }
         });
 
         OKButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                sp();
-                listSP.addElement(nomSp.getText());
-                listSp.setModel(listSP);
-                DefaultListModel model = (DefaultListModel) listAgentSelct.getModel();
-                for (int i=0; i<10; i++) {
-                    int selectedIndex = listAgentSelct.getSelectedIndex();
-                    if (selectedIndex != -1) {
-                        model.remove(selectedIndex);
-                    }
+                if(listAgentSelct.getSelectedValue()==null || listSecteur.getSelectedValue()==null || listVeh.getSelectedValue()==null){
+                    Lerreur.setText("erreur pas de secteur, véhicule ou agent selectionner");
                 }
-                PanelPatrouille.setVisible(false);
+                else {
+                    Lerreur.setText("");
+                    sp();
+                    listSP.addElement(nomSp.getText());
+
+                    listSp.setModel(listSP);
+                    DefaultListModel model = (DefaultListModel) listAgentSelct.getModel();
+                    for (int i = 0; i < 10; i++) {
+                        int selectedIndex = listAgentSelct.getSelectedIndex();
+                        if (selectedIndex != -1) {
+                            model.remove(selectedIndex);
+                        }
+                    }
+                    PanelPatrouille.setVisible(false);
+                }
             }
         });
 
@@ -150,9 +169,24 @@ public class Dispatch extends JDialog {
         dispose();
     }
 
+    public void listvehAgent(){
+       //verifier si y a sgt, sheriff, mini 2 ranger, chaque fois appuie plus refais list veh
+       //verifier quand Sheriff pas mettre granger 2021 sans sheriff
+        listVeh.removeAll();
+        DefaultListModel listveh = new DefaultListModel<>();
+        int nb = 0 ;
+
+        for (int i = nb; i<ag.listeVeh().length; i++) {
+            listveh.addElement(ag.listeVeh()[i]);
+        }
+        listVeh.setModel(listveh);
+
+    }
+
     void sp(){
         List<String> indicesAg = listAgentSelct.getSelectedValuesList();
         List<String> indicesSect = listSecteur.getSelectedValuesList();
+        List<String> indicesVeh = listVeh.getSelectedValuesList();
 
         nomSp.setText( "SP"+nbSP+" Agent: ");
         for (String i: indicesAg ) {
@@ -163,15 +197,20 @@ public class Dispatch extends JDialog {
         for (String i: indicesSect ) {
             nomSp.setText( nomSp.getText() +i);
         }
+
+        nomSp.setText( nomSp.getText() +" Véhicule: ");
+        for (String i: indicesVeh ) {
+            nomSp.setText( nomSp.getText() +i);
+        }
     }
     boolean syntax(){
         boolean test = false;
 
         if(!central.getText().equals("")){
             if (Pattern.matches("^([0-1][0-9]|2[0-3])h[0-5][0-9]$", DebuDisp.getText()) == true && DebuDisp.getText()!= "") {
-               // if(listAgentSelct.getSelectedValue()!=null){
-                    test = true;
-
+               if(listAgentSelct.getModel().getSize()==0) {
+                   test = true;
+               }
             }
         }
         else {
@@ -181,6 +220,7 @@ public class Dispatch extends JDialog {
     }
 
     private void listAgent(){
+
         ag.listAgent();
         DefaultListModel listAg = new DefaultListModel<>();
         for (Agent a: ag.agents ) {
@@ -188,13 +228,16 @@ public class Dispatch extends JDialog {
         }
         list1.setModel(listAg);
 
+    }
+
+    void heureRapport(){
 
     }
     private void back() {
         onCancel();
         Menu dialog = new Menu();
         dialog.pack();
-        dialog.setSize(700,700);
+        dialog.setSize(1500,1000);
         dialog.setVisible(true);
 
     }
